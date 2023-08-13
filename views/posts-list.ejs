@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <%- include("includes/head",{title:"All Posts"}) %>
 </head>
 <body>
     <%- include("includes/header") %>
     <main id="all-posts">
         <h1>All Posts</h1>
-        
-    </main>
+        <% if( !posts || posts.length===0 ) {%>
+            <p>No posts found - Maybe start creating some</p>
+   <a class="btn" href="/new-post">Create a new post</a>
+    <% } else { %>
+        <!-- Display all the posts -->
+        <ol id="post-list"></ol>
+        <% for(const post of posts){ %>
+            <li>
+                <%- include("includes/post-item",{post:post}) %>
+            </li>
+        <% } }%>
+    </main> 
 </body>
 </html>

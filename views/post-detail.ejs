@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include("includes/head",{title:"Post title"}) %>
+    <%- include("includes/head",{title:post.title}) %>
 </head>
 <body>
     <%- include("includes/header") %>
     <main id="all-detail">
-        <h1>...</h1>
+        <h1><%= post.title %></h1>
         <section id="post-meta">
-            ...
+          <address><a href="mailto:<%= post.author_email %>"><%= post.author_email %></a> | <time datetime="<%= post.date %>"><%= post.humanReadableDate %></time>
+          </address>
         </section>
         <hr>
         <section>
-            <p id="body">...</p>
+            <p id="body"><%= post.body %></p>
         </section>
         
     </main>
