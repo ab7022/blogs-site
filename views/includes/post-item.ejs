@@ -1,11 +1,19 @@
-<article class="post-item">
-    <h2 class="post-item-title"><%= post.title %></h2>
-    <p class="post-item-author">By:<%= post.author_name  %></p>
-    <p class="post-item-summary"><%= post.summary %></p>
-    <p class="post-item-body"><%= post.body %></p>
-    <div class="post-actions">
-        <button class="btn delete-btn">Delete Post</button>
-        <a href="/posts/<%= post.id %>/edit" class="btn edit-btn">Edit Post</a>
-        <a href="/posts/<%= post.id %>" class="btn view-btn">View Post</a>
+<article class="tweet">
+    <div class="tweet-profile">
+        <img src="<%= post.author.imagePath %>" alt="profile image">
+    </div>
+    
+    <div class="tweet-content">
+        <h2 class="tweet-title"><%= post.title %></h2>
+        <p class="tweet-author">By: <%= post.author.name %></p>
+        <div class="tweet-summary"><%= post.summary %></div>
+        <p class="tweet-body"><%= post.body %></p>
+        <div class="tweet-actions">
+            <form action="/posts/<%= post._id %>/delete" method="POST">
+                <button class="btn delete-btn">Delete Post</button>
+            </form>
+            <a href="/posts/<%= post._id %>/edit" class="btn edit-btn">Edit Post</a>
+            <a href="/posts/<%= post._id %>/view" class="btn view-btn">View Post</a>
+        </div>
     </div>
 </article>

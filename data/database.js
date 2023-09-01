@@ -1,8 +1,21 @@
-const mysql = require("mysql2/promise")
-const pool = mysql.createPool({
-    host: "localhost",
-    user:"root",
-    password : "Abuhusaina@1",
-    database :"blog"
-})
-module.exports = pool
+const mongodb = require("mongodb");
+const MongoClient = mongodb.MongoClient;
+let database;
+
+async function connect() {
+  const client = await MongoClient.connect("mongodb://localhost:27017");
+  database = client.db("blog");
+  // database = client.db("file-demo");
+
+}
+
+function getDb() {
+  if (!database) {
+    throw { message: "Database connection not established" };
+  }
+  return database;
+}
+module.exports = {
+     connectToDatabase:connect,
+     getDb:getDb
+};

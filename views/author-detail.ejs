@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Author Detail</title>
+</head>
+<body>
+    <%- include("includes/header") %>
+    <main id="all-detail">
+        <h1>Author Detail</h1>
+        <% for (const author of authors){ %>
+            <div class="author-info">
+                <img src="<%= author.imagePath %>" alt="Author Profile Picture" class="author-image">
+                <div class="author-details">
+                    <h2 class="author-name"><%= author.name %></h2>
+                    <p class="author-email">Email: <%= author.email %></p>
+                </div>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>

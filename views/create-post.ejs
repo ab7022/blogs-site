@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include("includes/head",{title:"Post title"}) %>
+    <%- include("includes/head") %>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <%- include("includes/header") %>
     <main id="all-detail">
-        <h1>Create New Post</h1>
+        <h1>Create New Post</h1>    
         <form action="/posts" method="POST">
             <div class="form-control">
                 <label for="title">Title</label>
@@ -26,9 +26,9 @@
             <div class="form-control">
                 <label for="author">Author</label>
                 <select name="author" id="author">
-                <% for(const author of authors){ %>
-                    <option value="<%= author.id %>" ><%= author.name %></option>
-                    <% } %>
+            <% for (const author of authors){ %>
+                <option value="<%= author._id %>"> <%= author.name %></option>
+                <% } %>
                 </select>
             </div>
             <button class="btn">Add Post</button>

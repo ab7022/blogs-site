@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include("includes/head",{title:post.title}) %>
+    <%- include("includes/head",{post:post}) %>
 </head>
 <body>
     <%- include("includes/header") %>
     <main id="all-detail">
         <h1><%= post.title %></h1>
+        <div class="tweet-profile">
+            <img src="<%= post.author.imagePath %>" alt="profile image">
+        </div>
         <section id="post-meta">
-          <address><a href="mailto:<%= post.author_email %>"><%= post.author_email %></a> | <time datetime="<%= post.date %>"><%= post.humanReadableDate %></time>
-          </address>
+          <address> <a href="mailto:<%= post.author.email %>"><%= post.author.name %></a> | <time data-time="<%= post.date %>"><%= post.humanReadableDate %></time>
+          </address> 
+          
         </section>
         <hr>
-        <section>
+        <section>   
             <p id="body"><%= post.body %></p>
         </section>
         

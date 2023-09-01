@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("includes/head") %>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/scripts/file-preview.js" defer></script>
+</head>
+<body>
+    <%- include("includes/header") %>
+    <main id="all-detail">
+        <h1>Add Author</h1>    
+        <form action="/add-author" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+                <label for="name">Author's Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-control">
+                <label for="email">Author's Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-control">
+                <img src="" alt="your picked image" id="image-preview">
+                <label for="image">Author's Picture</label>
+                <input type="file" accept=".png,.jpg,.jpeg" name="image" id="image" required>
+            </div>
+            <button class="btn">Add Post</button>
+</section>
+        </form>
+        
+    </main>
+</body>
+</html>
