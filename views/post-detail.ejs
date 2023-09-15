@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/scripts/comments.js" defer></script>
     <%- include("includes/head",{post:post}) %>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("includes/header") %>
     <main id="all-detail">
-        <h1><%= post.title %></h1>
-        <div class="tweet-profile">
-            <img src="<%= post.author.imagePath %>" alt="profile image">
-        </div>
-        <section id="post-meta">
-          <address> <a href="mailto:<%= post.author.email %>"><%= post.author.name %></a> | <time data-time="<%= post.date %>"><%= post.humanReadableDate %></time>
-          </address> 
-          
-        </section>
-        <hr>
-        <section>   
-            <p id="body"><%= post.body %></p>
-        </section>
+      <h1><%= post.title %></h1>
+      <div class="tweet-profile">
+        <img src="<%= post.author.imagePath %>" alt="profile image" />
+      </div>
+      <section id="post-meta">
+        <address>
+          <a href="mailto:<%= post.author.email %>"><%= post.author.name %></a>
+          |
+          <time data-time="<%= post.date %>"
+            ><%= post.humanReadableDate %></time
+          >
+        </address>
+      </section>
+      <hr />
+      <section>
+        <p id="body"><%= post.body %></p>
+        <% console.log("Comments:", comments); %>
+
+      </section>
+
+      <% if(comments){ %>
+        <section class="comments">
+      <p>
+        This post might have comments. You can Load them if you want to view
+        them.
+      </p>
+    </section>
+      <% } else if(comments.length==0){ %>
+      <p>No Comments Found...</p>
+      <% } else{ %>
         
+        <% for(const comment of comments){ %>
+        <li>
+            <h2><%=comment.title %></h2>
+            <h6><%=comment.text %></h6>
+
+        </li>
+        <% } %>
+      </ol>
+      <% } %>
+      <section id="comments-form">
+        <h2>Leave a comment</h2>
+        <form data-postid="<%= post._id %>">
+          <div class="form-control">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required />
+            <label for="text">Comment</label>
+            <input  type="text" name="text" id="text" required />
+            <button type="submit" class="btn btn-alt">Submit</button>
+          </div>
+        </form>
+      </section>
+      <section id="comments-form">
+        <h2>Comments</h2>
+        <ol id="comments-list"></ol>
+        <button
+          class="btn btn-alt"
+          id="load-comments-btn"
+          data-postid="<%= post._id %>"
+        >
+          Load Comments
+        </button>
     </main>
-</body>
+  </body>
 </html>

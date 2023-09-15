@@ -102,27 +102,13 @@ router.get("/posts/:id/view", async function (req, res, next) {
     day: "numeric",
   });
   post.date = post.date.toISOString();
-  res.render("post-detail", { post: post });
+  const comments = await db
+  .getDb()
+  .collection("comments")
+  .find({ postId: postId }) // Use postId for querying
+  .toArray();
+  res.render("post-detail", { post: post,comments:comments});
 });
-// router.get("/posts/:id/view", async function (req, res) {
-//   const postId = req.params.id;
-//   const post = await db
-//     .getDb()
-//     .collection("posts")
-//     .findOne({ _id: new ObjectId(postId) }, { summary: 0 });
-
-//   if (!post) {
-//     return res.status(404).render("404");
-//   }
-//   post.humanReadableDate = post.date.toLocaleDateString("en-US", {
-//     weekday: "long",
-//     year: "numeric",
-//     month: "long",
-//     day: "numeric",
-//   });
-//   post.date = post.date.toISOString();
-//   res.render("post-detail", { post: post });
-// });
 
 router.get("/posts/:id/edit", async function (req, res) {
   const postId = req.params.id;
@@ -167,4 +153,34 @@ router.post("/posts/:id/delete", async function (req, res) {
     .deleteOne({ _id: postId });
   res.redirect("/posts");
 });
+router.get("/posts/:id/comments", async function (req, res) {
+  try {
+    const postId = new ObjectId(req.params.id);
+    const comments = await db
+      .getDb()
+      .collection("comments")
+      .find({ postId }) // Use postId for querying
+      .toArray();
+    
+    res.json(comments); // This sends a response with comments in JSON format
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "An error occurred while retrieving comments" });
+  }
+});
+
+
+
+router.post("/posts/:id/comments", async function (req, res) {
+  const postId = new ObjectId(req.params.id);
+  const newComment = {
+    postId, // Use postId for associating the comment with the post
+    title: req.body.title,
+    text: req.body.text,
+  };
+  await db.getDb().collection("comments").insertOne(newComment);
+  res.json({message:"comment added"})
+}
+);
 module.exports = router;
+

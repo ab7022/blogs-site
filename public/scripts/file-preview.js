@@ -10,7 +10,5 @@ function showPreview(){
     const pickedFile = files[0]
     imagePreviewElement.src=URL.createObjectURL(pickedFile)
     imagePreviewElement.style.display = "block"
-
-
 }
 filePickerElement.addEventListener("change",showPreview)
