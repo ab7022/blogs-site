@@ -1,8 +1,11 @@
 const express = require("express");
 const mongodb = require("mongodb");
+const path = require("path")
+
 const db = require("../data/database");
 const router = express.Router();
 const multer = require("multer");
+
 router.use(express.urlencoded({ extended: true }));
 // const upload = multer({dest: "images"})
 const ObjectId = mongodb.ObjectId;

@@ -110,12 +110,12 @@ body {
     background-color: #c5c5c5;
   }
   .tweet-profile img{
-    flex: 0 0 auto; /* Prevent flex from growing */
-    max-width: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
   
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px;
+  }
   .tweet-content {
     flex: 1;
     display: flex;
@@ -215,9 +215,10 @@ margin: 15%;
 
 /* Style the author image */
 .author-image {
-  max-width: 70px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 /* Style the author details */
