@@ -8,7 +8,7 @@ const commentTextElement = document.getElementById("text");
 function displayErrorMessage(message) {
   const errorMessageElement = document.getElementById("error-message");
   errorMessageElement.textContent = message;
-}
+}  
 
 // Function to fetch comments for a post
 // Function to fetch comments for a post

@@ -4,10 +4,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
+    background: white;
+}
+
   #main-header {
-    background-color: #007bff;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     color: white;
     padding: 25px;
     display: flex;
@@ -40,10 +44,12 @@ body {
   }
   
   #all-detail {
-    width: 70%;
-    max-width: 700px;
-    margin: 0 auto;
+    background-color: #e3e8f3;
+    width: 50%;
+    margin: 6% auto;
     padding: 25px;
+    min-height: 400px;
+    border-radius: 4px;
   }
   
   .form-control {
@@ -59,7 +65,7 @@ body {
   input[type="text"],input[type="email"],
   textarea,
   select {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -102,7 +108,10 @@ body {
     align-items: flex-start;
     margin:2%;
     padding: 15px;
-    background-color: #f7f7f7;
+    background: #e6ecf7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e0e9f5, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #e0e8f3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     border-radius: 15px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
