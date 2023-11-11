@@ -2,9 +2,20 @@
 
 
 ## Screenshots
-![img](https://github.com/ab7022/blogs-site/screenshots/Blog_allPost.png)
+![Add Author](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_addAuthor.png)
+![All Author](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_allAuthor.png)
 
-![inmg2](screenshots/blog_addAuthor.png)
+![All Post](https://github.com/ab7022/blogs-site/blob/main/screenshots/Blog_allPost.png)
+
+![Blog Details](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_details.png)
+
+![New Post](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_newPost.png)
+
+![update Post](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_update.png)
+
+
+
+
 
 ## Overview
 
