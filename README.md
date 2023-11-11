@@ -1,9 +1,10 @@
 # Blogging Website
 
 
-## Screnshots
-![my image](./screenshots/blog_addAuthor.png)
+## Screenshots
+![img](https://github.com/ab7022/blogs-site/screenshots/Blog_allPost.png)
 
+![inmg2](screenshots/blog_addAuthor.png)
 
 ## Overview
 
