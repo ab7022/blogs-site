@@ -2,20 +2,12 @@
 
 
 ## Screenshots
-![Add Author](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_addAuthor.png)
-![All Author](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_allAuthor.png)
-
-![All Post](https://github.com/ab7022/blogs-site/blob/main/screenshots/Blog_allPost.png)
-
-![Blog Details](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_details.png)
-
-![New Post](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_newPost.png)
-
-![update Post](https://github.com/ab7022/blogs-site/blob/main/screenshots/blog_update.png)
-
-
-
-
+<a href="https://ibb.co/Wn8mX4b"><img src="https://i.ibb.co/Wn8mX4b/Blog-all-Post.png" alt="Blog-all-Post" border="0" width="100%"></a>
+<a href="https://ibb.co/DtdmsdK"><img src="https://i.ibb.co/DtdmsdK/blog-add-Author.png" alt="blog-add-Author" border="0"></a>
+<a href="https://ibb.co/F0njZRf"><img src="https://i.ibb.co/F0njZRf/blog-all-Author.png" alt="blog-all-Author" border="0"></a>
+<a href="https://ibb.co/xC3mN4J"><img src="https://i.ibb.co/xC3mN4J/blog-details.png" alt="blog-details" border="0"></a>
+<a href="https://ibb.co/yhWM6n0"><img src="https://i.ibb.co/yhWM6n0/blog-new-Post.png" alt="blog-new-Post" border="0"></a>
+<a href="https://ibb.co/1vtGCXB"><img src="https://i.ibb.co/1vtGCXB/blog-update.png" alt="blog-update" border="0"></a>
 
 ## Overview
 
